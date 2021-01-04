@@ -231,6 +231,7 @@ var count;
 var rng1;
 var rng2;
 var rng3;
+var rnd;
 var prep_time_interval;
 var Instr_ExpClock;
 var Instr_Exp_Text;
