@@ -358,7 +358,7 @@ function experimentInit() {
   n_map = stim_key_perm.length;
   rt_block_hand = 1;
   tr_block_hand = 4;
-  num_per_pos = 5;
+  num_per_pos = 20;
   num_trials_hand = (num_per_pos * num_pos);
   num_trials_cr = 2000;
   num_criterion = 5;
@@ -380,33 +380,37 @@ function experimentInit() {
   tr_new_block = 0;
   if ((session === 1)) {
       instr_exp = 1;
-      hand_rt = 0;
-      hand_tr = 0;
-      cr_old = 0;
+      hand_rt = 1;
+      hand_tr = 1;
+      cr_old = 1;
       cr_new = 0;
-      rt_old = 0;
+      rt_old = 1;
       rt_new = 0;
       rt_old_block = 5;
       rt_new_block = 0;
       tr_old = 1;
       tr_new = 0;
-      tr_old_block = 4;
+      tr_old_block = 6;
       tr_new_block = 0;
   } else {
-      if (((6 > session) && (session > 1))) {
+      if (session === 2 || session == 4 || session == 6) {
           rt_old = 1;
-          rt_old_block = 5;
-          tr_old = 1;
-          tr_old_block = 4;
+          rt_old_block = 10;
       } else {
-          if ((session === 6)) {
+          if (session === 3 || session === 5 || session == 7) {
               rt_old = 1;
-              rt_old_block = 2;
-              cr_new = 1;
-              tr_new = 1;
-              tr_new_block = 5;
+              rt_old_block = 5;
+              tr_old_block = 6;
+          } else {
+            if (session === 8) {
+                rt_old = 1;
+                rt_old_block = 2;
+                cr_new = 1;
+                tr_new = 1;
+                tr_new_block = 6;
+            }
           } 
-      }
+      } 
   }
   timing_tol_early = 0.1;
   timing_tol_late = 0.075;
