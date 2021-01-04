@@ -2752,6 +2752,8 @@ var stim_num;
 var ctx_map;
 var ctx_color_map;
 var j;
+var reorder_key;
+var swap_key;
 var stim_key_map_rng;
 var finger_ctx1;
 var finger_ctx2;
