@@ -391,9 +391,9 @@ function experimentInit() {
       hand_tr = 0;
       cr_old = 1;
       cr_new = 0;
-      rt_old = 0;
+      rt_old = 1;
       rt_new = 0;
-      rt_old_block = 0;
+      rt_old_block = 5;
       rt_new_block = 0;
       tr_old = 0;
       tr_new = 0;
