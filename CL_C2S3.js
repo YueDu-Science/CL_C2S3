@@ -329,7 +329,7 @@ function experimentInit() {
   circle_wd = 12;
   ctx_wd = 0;
   ctx_opacity = 0.5;
-  ctx_size = 0.293;
+  ctx_size = 0.291;
   feedback_size = [0.18, 0.18];
   pre_trial_dur = 0.1;
   post_trial_dur = 0.1;
@@ -2855,7 +2855,7 @@ function Import_Stim_FileRoutineBegin(trials) {
             if ((i <= n_map)) {
                 candidate_map = stim_key_perm[i];
             } else {
-                candidate_map = stim_key_perm[(i - n_map)];
+                candidate_map = stim_key_perm[Math.trunc(i - n_map)];
             }
             
             for (var ii = 0, _pj_b = num_symb; (ii < _pj_b); ii += 1) {
@@ -2886,7 +2886,7 @@ function Import_Stim_FileRoutineBegin(trials) {
                 if ((i <= n_map)) {
                     candidate_map = stim_key_perm[i];
                 } else {
-                    candidate_map = stim_key_perm[(i - n_map)];
+                    candidate_map = stim_key_perm[Math.trunc(i - n_map)];
                     console.log(i)
                     console.log(n_map)
                     console.log(i - n_map)
