@@ -1990,12 +1990,12 @@ function CR_Old_IterLoopBegin(thisScheduler) {
     thisScheduler.add(RT_FeedbackRoutineBegin(snapshot));
     thisScheduler.add(RT_FeedbackRoutineEachFrame(snapshot));
     thisScheduler.add(RT_FeedbackRoutineEnd(snapshot));
-    thisScheduler.add(Post_TrialRoutineBegin(snapshot));
-    thisScheduler.add(Post_TrialRoutineEachFrame(snapshot));
-    thisScheduler.add(Post_TrialRoutineEnd(snapshot));
     thisScheduler.add(Criterion_DetRoutineBegin(snapshot));
     thisScheduler.add(Criterion_DetRoutineEachFrame(snapshot));
     thisScheduler.add(Criterion_DetRoutineEnd(snapshot));
+    thisScheduler.add(Post_TrialRoutineBegin(snapshot));
+    thisScheduler.add(Post_TrialRoutineEachFrame(snapshot));
+    thisScheduler.add(Post_TrialRoutineEnd(snapshot));
     thisScheduler.add(endLoopIteration(thisScheduler, snapshot));
   }
 
@@ -2077,12 +2077,12 @@ function CR_New_IterLoopBegin(thisScheduler) {
     thisScheduler.add(RT_FeedbackRoutineBegin(snapshot));
     thisScheduler.add(RT_FeedbackRoutineEachFrame(snapshot));
     thisScheduler.add(RT_FeedbackRoutineEnd(snapshot));
-    thisScheduler.add(Post_TrialRoutineBegin(snapshot));
-    thisScheduler.add(Post_TrialRoutineEachFrame(snapshot));
-    thisScheduler.add(Post_TrialRoutineEnd(snapshot));
     thisScheduler.add(Criterion_DetRoutineBegin(snapshot));
     thisScheduler.add(Criterion_DetRoutineEachFrame(snapshot));
     thisScheduler.add(Criterion_DetRoutineEnd(snapshot));
+    thisScheduler.add(Post_TrialRoutineBegin(snapshot));
+    thisScheduler.add(Post_TrialRoutineEachFrame(snapshot));
+    thisScheduler.add(Post_TrialRoutineEnd(snapshot));
     thisScheduler.add(endLoopIteration(thisScheduler, snapshot));
   }
 
@@ -4014,7 +4014,7 @@ function Post_TrialRoutineBegin(trials) {
     psychoJS.experiment.addData("Block_Type", block_type);
     psychoJS.experiment.addData("Remap", remap);
     psychoJS.experiment.addData("Repeat_Count", repeat_count);
-    psychoJS.experiment.addData("Trial_Count", trial_count);
+    psychoJS.experiment.addData("Trial_Count", trial_count-1);
     psychoJS.experiment.addData("Grp", grp);
     psychoJS.experiment.addData("Block_Num", block_count);
     psychoJS.experiment.addData("Prep_Time", prep_time);
