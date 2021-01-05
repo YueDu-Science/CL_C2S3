@@ -2826,6 +2826,7 @@ function Import_Stim_FileRoutineBegin(trials) {
 
     console.log(stim_key_map_ctx1)
     rnd = Math.floor(rng3 * n_map) // random interger between 0 and num_symb - 1
+    console.log(rnd)
     if ((grp === 1)) {
         for (var i = rnd, _pj_a = (rnd + n_map); (i < _pj_a); i += 1) {
             reorder_key = 0;
@@ -2835,7 +2836,7 @@ function Import_Stim_FileRoutineBegin(trials) {
             } else {
                 candidate_map = stim_key_perm[(i - n_map)];
             }
-            console.log(candidate_map)
+            
             for (var ii = 0, _pj_b = num_symb; (ii < _pj_b); ii += 1) {
                 if ((stim_key_map_ctx1[ii] === candidate_map[ii])) {
                     reorder_key = 0;
@@ -2884,7 +2885,7 @@ function Import_Stim_FileRoutineBegin(trials) {
             }
         }
     }
-
+    console.log(stim_key_map_ctx2)
     finger_ctx1 = [];
     finger_ctx2 = [];
     for (var i = 0, _pj_a = num_symb; (i < _pj_a); i += 1) {
