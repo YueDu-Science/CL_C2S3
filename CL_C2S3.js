@@ -2845,17 +2845,16 @@ function Import_Stim_FileRoutineBegin(trials) {
     stim_key_map_rng = Math.floor(rng2 * n_map) // random interger between 0 and num_symb - 1
     stim_key_map_ctx1 = stim_key_perm[stim_key_map_rng];
     
-    
     rnd = Math.floor(rng3 * n_map) // random interger between 0 and num_symb - 1
     
     if ((grp === 1)) {
         for (var i = rnd, _pj_a = (rnd + n_map); (i < _pj_a); i += 1) {
             reorder_key = 0;
             swap_key = 0;
-            if ((i <= n_map)) {
+            if ((i < n_map)) {
                 candidate_map = stim_key_perm[i];
             } else {
-                candidate_map = stim_key_perm[Math.trunc(i - n_map)];
+                candidate_map = stim_key_perm[(i - n_map)];
             }
             
             for (var ii = 0, _pj_b = num_symb; (ii < _pj_b); ii += 1) {
@@ -2883,14 +2882,10 @@ function Import_Stim_FileRoutineBegin(trials) {
         if ((grp === 2)) {
             for (var i = rnd, _pj_a = (rnd + n_map); (i < _pj_a); i += 1) {
                 swap_key = 0;
-                if ((i <= n_map)) {
+                if ((i < n_map)) {
                     candidate_map = stim_key_perm[i];
                 } else {
-                    candidate_map = stim_key_perm[Math.trunc(i - n_map)];
-                    console.log(i)
-                    console.log(n_map)
-                    console.log(i - n_map)
-                    console.log(stim_key_perm[(i - n_map)])
+                    candidate_map = stim_key_perm[(i - n_map)];
                 }
                 
                 for (var ii = 0, _pj_b = num_symb; (ii < _pj_b); ii += 1) {
