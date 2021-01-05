@@ -5301,7 +5301,7 @@ function Criterion_DetRoutineBegin(trials) {
             sum_corr[stim_num_item] = 0;
         }
     }
-    console.log(sum_corr)
+    
     if (RT_Press.corr) {
         trial_count = (trial_count + 1);
         repeat_count = 0;
