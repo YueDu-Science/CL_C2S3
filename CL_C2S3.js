@@ -3365,7 +3365,7 @@ function Creat_StimSeqRoutineBegin(trials) {
     }
     repeat_count = 0;
     tr_timing_good = 0;
-    sum_corr = [0, 0, 0, 0];
+    sum_corr = new Array(num_symb*num_ctx).fill(0);
     if ((stim_type === "Hand")) {
         seq_handx = [];
         seq_handy = [];
@@ -5307,6 +5307,7 @@ function Criterion_DetRoutineBegin(trials) {
     } else {
         repeat_count = (repeat_count + 1);
     }
+    
     function CR_Crit(ls) {
         for (var i, _pj_c = 0, _pj_a = ls, _pj_b = _pj_a.length; (_pj_c < _pj_b); _pj_c += 1) {
             i = _pj_a[_pj_c];
