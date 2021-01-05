@@ -323,7 +323,7 @@ function experimentInit() {
   circle_wd = 12;
   ctx_wd = 0;
   ctx_opacity = 0.5;
-  ctx_size = 0.294;
+  ctx_size = 0.293;
   feedback_size = [0.18, 0.18];
   pre_trial_dur = 0.1;
   post_trial_dur = 0.1;
@@ -2991,21 +2991,21 @@ With your Right hand, place your Index and Middle fingers on (H, U, I) respectiv
     
 You will see a hand appear on the screen. One of the fingers on the screen will light up and your job is to press the corresponding finger as quickly and as accurately as possible.
     
-Ready? Press (H), (U), or (I) to continue.`
+Ready? Press (H, U, or I) to continue.`
     ;
     instr_tr_text_hand = `Great Job!
     
 Now, you need to press the corresponding finger when the larger white ring intersects the smaller grey ring. Sometimes, the finger will light up at the very last second. You will not have enough time to know which finger to press. In this case, MAKE A GUESS. Always press one of your fingers when two rings intersect.
     
-Let’s practice! Press (H), (U), or (I) to continue.`
+Let’s practice! Press (H, U, or I) to continue.`
     ;
     instr_cr_old_text = `Good Job! You are now ready for the tasks!
     
-You will see four symbols on the screen. Each symbol corresponds to one of the keys (H, U). Your job is to figure out which symbol corresponds with which key.
+You will see three symbols on the screen. Each symbol corresponds to one of the keys (H, U, I). Your job is to figure out which symbol corresponds with which key.
     
 ACCURACY is the priority, so go as slowly as you need to. The more mistakes you make, the longer this block will take.
     
-Ready? Press (H), (U), or (I) to continue.`
+Ready? Press (H, U, or I) to continue.`
     ;
     instr_cr_new_text = `Congratulations!
     
@@ -3013,14 +3013,14 @@ Now, you need to learn a new map bewtween those four symbols and two keys.
     
 Again, ACCURACY is the priority, so go as slowly as you need to. The more mistaks you make, the longer this block will take.
     
-When you are ready, press (H), (U), or (I) to continue.`
+When you are ready, press (H, U, or I) to continue.`
     ;
     if ((session === 1)) {
         instr_rt_old_text = `Now using the maps that you just learned, your job is to press the corresponding key as quickly and as accurately as possible.
     
 There will be ${rt_old_block} blocks with short breaks in between.
     
-Whenever you are ready, press (H), (U), or (I) to start.`
+Whenever you are ready, press (H, U, or I) to start.`
     ;
     } else {
         if (session === 2 || session === 4 || session == 6) {
@@ -3032,7 +3032,7 @@ Your job is to press the corresponding key as quickly and accurately as you can.
 
 Remember, once you start, you cannot turn off your web browser until you complete the study.
     
-Ready? Press (H), (U), or (I) to start.`
+Ready? Press (H, U, or I) to start.`
     ;
         } else {
             if (session === 3 || session === 5 || session == 7) {
@@ -3044,7 +3044,7 @@ Your job is to press the corresponding key as quickly and accurately as you can.
 
 Remember, once you start, you cannot turn off your web browser until you complete the study.
     
-Whenever you are ready, press (H), (U), or (I) to start.`
+Whenever you are ready, press (H, U, or I) to start.`
     ;
             }
         }
@@ -3053,29 +3053,29 @@ Whenever you are ready, press (H), (U), or (I) to start.`
     
 There will be ${rt_old_block} blocks with short breaks in between.
     
-Whenever you are ready, press (H), (U), or (I) to start.`
+Whenever you are ready, press (H, U, or I) to start.`
     ;
     instr_tr_old_text = `Good job so far.
     
-In the following $(tr_old_block) blocks, press the corresponding key when the larger white ring intersects the smaller gray ring. Remember, the symbol may show up very late. In this case, MAKE A GUESS. This task is designed to be difficult, so it is okay to make a guess.
+In the following ${tr_old_block} blocks, press the corresponding key when the larger white ring intersects the smaller gray ring. Remember, the symbol may show up very late. In this case, MAKE A GUESS. This task is designed to be difficult, so it is okay to make a guess.
     
-Press (H), (U), or (I) to start.`
+Press (H, U, or I) to start.`
     ;
     instr_tr_new_text = `Good job so far.
     
-In the following $(tr_new_block) blocks, use the NEW MAP you learned.
+In the following ${tr_new_block} blocks, use the NEW MAP you learned.
 
 Press the corresponding key when the larger white ring intersects the smaller gray ring. Remember, the symbol may show up very late. In this case, MAKE A GUESS. This task is designed to be difficult, so it is okay to make a guess.
     
-Press (H), (U), or (I) to start.`
+Press (H, U, or I) to start.`
     ;
     penalty_toolate_text = `Response was too late
 2 second penalty
-After 2 second, press (H), (U), or (I) to continue`
+After 2 second, press (H, U, or I) to continue`
     ;
     penalty_tooearly_text = `Response was too early
 2 second penalty
-After 2 second, press (H), (U), or (I) to continue`
+After 2 second, press (H, U, or I) to continue`
     ;
     feedback_early_text = `little early`;
     feedback_late_text = `little late`;
