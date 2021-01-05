@@ -4253,7 +4253,7 @@ function Instr_Block_NumRoutineBegin(trials) {
     Instr_Block_NumClock.reset(); // clock
     frameN = -1;
     // update component parameters for each repeat
-    Instr_Block_Num_Text.setText((('Block ' + block_count) + '\nPress (H) or (U) to start'));
+    Instr_Block_Num_Text.setText((('Block ' + block_count) + '\nPress (H, U, or I) to start'));
     Instr_Block_Num_Press.keys = undefined;
     Instr_Block_Num_Press.rt = undefined;
     _Instr_Block_Num_Press_allKeys = [];
