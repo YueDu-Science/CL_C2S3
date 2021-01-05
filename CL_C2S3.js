@@ -401,6 +401,7 @@ function experimentInit() {
           if (session === 3 || session === 5 || session == 7) {
               rt_old = 1;
               rt_old_block = 5;
+              tr_old = 1;
               tr_old_block = 6;
           } else {
             if (session === 8) {
@@ -3022,15 +3023,15 @@ There will be ${rt_old_block} blocks with short breaks in between.
 Whenever you are ready, press (H), (U), or (I) to start.`
     ;
     } else {
-        if (((1 < session) && (session < 6))) {
-            instr_rt_old_text = `Today, we first continue to practice the symbol-key maps for ${rt_old_block} blocks.
+        if (session === 2 || session === 4 || session == 6) {
+            instr_rt_old_text = `Today, we continue to practice the symbol-key maps for ${rt_old_block} blocks.
     
 Remember, your job is to press the corresponding key as quickly and accurately as you can.
     
 Ready? Press (H), (U), or (I) to start.`
     ;
         } else {
-            if ((session > 5)) {
+            if (session === 3 || session === 5 || session == 7) {
                 instr_rt_old_text = `Today, we first continue to practice the symbol-key maps for ${rt_old_block} blocks.
     
 Remember, your job is to press the corresponding key as quickly and accurately as you can.
