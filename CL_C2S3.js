@@ -432,10 +432,6 @@ function experimentInit() {
   rng2 = myrng();
   rng3 = myrng();
 
-  console.log(rng1)
-  console.log(rng2)
-  console.log(rng3)
-
   grp = 0;
   
   if ((rng1 < 0.5)) {
@@ -2824,9 +2820,9 @@ function Import_Stim_FileRoutineBegin(trials) {
     stim_key_map_rng = Math.floor(rng2 * n_map) // random interger between 0 and num_symb - 1
     stim_key_map_ctx1 = stim_key_perm[stim_key_map_rng];
 
-    console.log(stim_key_map_ctx1)
+    
     rnd = Math.floor(rng3 * n_map) // random interger between 0 and num_symb - 1
-    console.log(rnd)
+    
     if ((grp === 1)) {
         for (var i = rnd, _pj_a = (rnd + n_map); (i < _pj_a); i += 1) {
             reorder_key = 0;
@@ -2885,7 +2881,7 @@ function Import_Stim_FileRoutineBegin(trials) {
             }
         }
     }
-    console.log(stim_key_map_ctx2)
+    
     finger_ctx1 = [];
     finger_ctx2 = [];
     for (var i = 0, _pj_a = num_symb; (i < _pj_a); i += 1) {
@@ -3418,8 +3414,6 @@ function Creat_StimSeqRoutineBegin(trials) {
         }
     }
 
-    console.log(finger)
-    
     count = 0;
     while ((count < (total_num_trials / 20))) {
          util.shuffle(x2);
@@ -3457,7 +3451,7 @@ function Creat_StimSeqRoutineBegin(trials) {
         }
         count = (count + 1);
     }
-    console.log(seq_finger)
+    
     // keep track of which components have finished
     Creat_StimSeqComponents = [];
     
@@ -5258,8 +5252,6 @@ function RT_Enter_TrialRoutineEnd(trials) {
         trial_count = (trial_count + 1);
     }
     
-    console.log(RT_Press.keys)
-    console.log(finger_item)
     // was no response the correct answer?!
     if (RT_Press.keys === undefined) {
       if (['None','none',undefined].includes(finger_item)) {
@@ -5318,7 +5310,6 @@ function Criterion_DetRoutineBegin(trials) {
     if (CR_Crit(sum_corr)) {
       trials.finished =  true;
     }
-    console.log(sum_corr);
     
     // keep track of which components have finished
     Criterion_DetComponents = [];
