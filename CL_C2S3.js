@@ -3024,17 +3024,25 @@ Whenever you are ready, press (H), (U), or (I) to start.`
     ;
     } else {
         if (session === 2 || session === 4 || session == 6) {
-            instr_rt_old_text = `Today, we continue to practice the symbol-key maps for ${rt_old_block} blocks.
+            instr_rt_old_text = `Welcome back! 
+            
+Today, we continue to practice the symbol-key maps for ${rt_old_block} blocks.
     
-Remember, your job is to press the corresponding key as quickly and accurately as you can.
+Your job is to press the corresponding key as quickly and accurately as you can.
+
+Remember, once you start, you cannot turn off your web browser until you complete the study.
     
 Ready? Press (H), (U), or (I) to start.`
     ;
         } else {
             if (session === 3 || session === 5 || session == 7) {
-                instr_rt_old_text = `Today, we first continue to practice the symbol-key maps for ${rt_old_block} blocks.
+                instr_rt_old_text = `Welcome back!
+                
+Today, we first continue to practice the symbol-key maps for ${rt_old_block} blocks.
     
-Remember, your job is to press the corresponding key as quickly and accurately as you can.
+Your job is to press the corresponding key as quickly and accurately as you can.
+
+Remember, once you start, you cannot turn off your web browser until you complete the study.
     
 Whenever you are ready, press (H), (U), or (I) to start.`
     ;
