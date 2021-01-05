@@ -2760,6 +2760,7 @@ var finger_ctx2;
 var finger_map;
 var stim_key_remap_ctx1;
 var stim_key_remap_ctx2;
+var candidate_map;
 var finger_remap_ctx1;
 var finger_remap_ctx2;
 var finger_remap;
