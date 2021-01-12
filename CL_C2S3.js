@@ -448,9 +448,7 @@ function experimentInit() {
   } else {
       grp = 2;
   }
-  
-  console.log(grp)
-  
+
   prep_time_range = [0, 1.2];
   prep_time_ind_tmp = [];
   prep_time_ind = [];
