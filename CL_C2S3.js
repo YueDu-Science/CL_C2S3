@@ -314,6 +314,8 @@ var Instr_End_Exp_Key;
 var globalClock;
 var routineTimer;
 function experimentInit() {
+
+  document.body.style.cursor='none';
   // Initialize components for Routine "Import_Stim_File"
   Import_Stim_FileClock = new util.Clock();
   
@@ -6496,43 +6498,8 @@ function quitPsychoJS(message, isCompleted) {
     psychoJS.experiment.nextEntry();
   }
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  document.body.style.cursor='auto';
+
   psychoJS.window.close();
   psychoJS.quit({message: message, isCompleted: isCompleted});
   
