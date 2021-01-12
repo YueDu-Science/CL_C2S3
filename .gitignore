@@ -2,4 +2,4 @@
 *.psyexp
 *.py
 *.m
-Pilot-Data
+**Pilot-Data/
