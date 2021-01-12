@@ -1,0 +1,85 @@
+clear; clc; close all;
+
+path = ('D:\Project\Online\CL_C2S3\Pilot-Data'); % the data folder path
+folder = dir(path);
+cd(path);
+
+load pilot_data;
+
+xplot = 0:0.001:1.2;
+x_size = 0.15;
+
+col = [255,0,0; 0,100,0]/255;
+line_type = ['-','--',':','-.'];
+lw = 1.2;
+
+Ctx = {'Ctx-1','Ctx-2'};
+Stim = ['a','b','c'];
+Key = ['h','u','i'];
+sub_id = unique(DATA.participant);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% RT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+for i = 1:numel(sub_id)
+   tmp = [];
+   tmp = DATA(DATA.participant == sub_id(i),:);
+   
+   ind_blk_type = (all(char(tmp.Block_Type) == 'RT',2));
+   ind_stim_type = (all(char(tmp.Stim_Type) == 'Symb',2));
+   
+   data = tmp(ind_blk_type == 1 & ind_stim_type == 1,:);
+   
+   rt_ctx = [];
+   for c = 1:numel(unique(data.Ctx))
+       tmp_ctx = [];
+       tmp_ctx = data(data.Ctx == c,:);
+       for stim = 0:(numel(Stim)-1)
+           rt = [];
+           tmp_stim = [];
+           tmp_stim = tmp_ctx(tmp_ctx.Symbol == stim,:);
+           for sess = (unique(tmp_stim.Session))'
+               tmp = [];
+               tmp = tmp_stim(tmp_stim.Session == sess, :);
+               for blk = (unique(tmp.Block_Num))'
+                   tmp_blk = tmp(tmp.Block_Num == blk,:);
+                   tmp_rt = nanmean(tmp_blk.RT);
+                   rt = [rt; tmp_rt];
+               end
+           end
+           rt_ctx(:,stim + 1 + numel(Stim)*(c-1)) = rt;
+       end
+   end
+   f_title = ['RT_Ctx_Sub - ' num2str(sub_id(i))];
+   RT_Ctx = figure('name',f_title);
+   
+   subplot(5,1,[1,2]);
+    set(gcf,'color','w');
+    hold on
+    title('RT','FontSize',12, 'FontWeight','normal');
+    xlabel('Block','FontSize',12, 'FontWeight','normal');
+    ylabel('RT','FontSize',12, 'FontWeight','normal');
+
+    rt_ctx1 = nanmean(rt_ctx(:,1:numel(Stim)),2);
+    rt_ctx2 = nanmean(rt_ctx(:,numel(Stim)+1:2*numel(Stim)),2);                  
+
+    plot(rt_ctx1,'color',col(1,:),'LineStyle','-','LineWidth',2);
+    plot(rt_ctx2,'color',col(2,:),'LineStyle','-','LineWidth',2);
+
+    for stim = 1:numel(Stim)
+        subplot(5,1,stim+2);
+        hold on
+        plot(rt_ctx(:,stim),'color',col(1,:),'LineStyle','-','LineWidth',2);
+        plot(rt_ctx(:,stim+numel(Stim)),'color',col(2,:),'LineStyle','-','LineWidth',2);
+        %axis([0,50,0,3])
+        if stim == 1
+            tt = 'a';
+            
+    end
+    
+    set(gcf, 'Units', 'Inches', 'Position', [0, 0, 5, 5],...
+     'PaperUnits', 'Inches', 'PaperSize', [5, 5])
+    set(gcf,'renderer','Painters');
+    print(RT_Ctx,f_title, '-depsc','-r600');
+end
+%%
