@@ -105,10 +105,14 @@ psychoJS.start({
 
 var frameDur;
 function updateInfo() {
+  const browser = detectBrowser(); // detect browser
+
   expInfo['date'] = util.MonotonicClock.getDateStr();  // add a simple timestamp
   expInfo['expName'] = expName;
   expInfo['psychopyVersion'] = '2020.1.3';
   expInfo['OS'] = window.navigator.platform;
+  expInfo['browser'] = browser;
+  expInfo['browserInfo'] = window.navigator.userAgent;
 
   // store frame rate of monitor if we can measure it successfully
   expInfo['frameRate'] = psychoJS.window.getActualFrameRate();
@@ -6504,4 +6508,37 @@ function quitPsychoJS(message, isCompleted) {
   psychoJS.quit({message: message, isCompleted: isCompleted});
   
   return Scheduler.Event.QUIT;
+}
+
+// detect what browser participants are using
+function detectBrowser() {    
+  const isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0; // Opera 8.0+
+  const isFirefox = typeof InstallTrigger !== 'undefined'; // Firefox 1.0+
+  const isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && safari.pushNotification)); // Safari 3.0+ "[object HTMLElementConstructor]"
+  const isIE = /*@cc_on!@*/false || !!document.documentMode; // Internet Explorer 6-11
+  const isEdge = !isIE && !!window.StyleMedia; // Edge 20+
+  const isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime); // Chrome 1 - 79
+  const isEdgeChromium = isChrome && (navigator.userAgent.indexOf("Edg") != -1); // Edge (based on chromium) detection
+  const isBlink = (isChrome || isOpera) && !!window.CSS; // Blink engine detection
+
+  let browser;
+  if (isOpera)
+    browser = 'Opera';
+  else if (isFirefox)
+    browser = 'Firefox';
+  else if (isSafari)
+    browser = 'Safari';
+  else if (isIE)
+    browser = 'IE';
+  else if (isEdge)
+    browser = 'Edge';
+  else if (isChrome)
+    browser = 'Chrome';
+  else if (isEdgeChromium)
+    browser = 'Edge Chromium';
+  else if (isBlink)
+    browser = 'Blink';
+  else
+    browser = 'Could not identify browser';
+  return browser;
 }
