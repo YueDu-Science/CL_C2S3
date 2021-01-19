@@ -406,11 +406,11 @@ function experimentInit() {
       tr_old_block = 6;
       tr_new_block = 0;
   } else {
-      if (session === 2 || session === 4 || session === 6 || session === 8 || session === 10) {
+      if (session === 2 || session === 4 || session === 6 || session === 8 || session === 10 || session === 14 || session === 16) {
           rt_old = 1;
           rt_old_block = 10;
       } else {
-          if (session === 3 || session === 5 || session === 7 || session === 9 || session === 11) {
+          if (session === 3 || session === 5 || session === 7 || session === 9 || session === 11 || session === 13 || session === 15 || session === 17) {
               rt_old = 1;
               rt_old_block = 5;
               tr_old = 1;
@@ -3059,7 +3059,7 @@ There will be ${rt_old_block} blocks with short breaks in between.
 Whenever you are ready, press (H, U, or I) to start.`
     ;
     } else {
-        if (session === 2 || session === 4 || session === 6 || session === 8 || session === 10) {
+        if (session === 2 || session === 4 || session === 6 || session === 8 || session === 10 || session === 14 || session === 16) {
             instr_rt_old_text = `Welcome back! 
             
 Today, we continue to practice the symbol-key maps for ${rt_old_block} blocks.
@@ -3071,7 +3071,7 @@ Remember, once you start, you cannot turn off your web browser until you complet
 Ready? Press (H, U, or I) to start.`
     ;
         } else {
-            if (session === 3 || session === 5 || session === 7 || session === 9 || session === 11) {
+            if (session === 3 || session === 5 || session === 7 || session === 9 || session === 11 || session === 13 || session === 15 || session === 17 || session === 12) {
                 instr_rt_old_text = `Welcome back!
                 
 Today, we first continue to practice the symbol-key maps for ${rt_old_block} blocks.
