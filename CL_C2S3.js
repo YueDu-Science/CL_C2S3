@@ -421,7 +421,7 @@ function experimentInit() {
                 rt_old_block = 2;
                 cr_new = 1;
                 tr_new = 1;
-                tr_new_block = 6;
+                tr_new_block = 8;
             }
           } 
       } 
@@ -3045,7 +3045,7 @@ Ready? Press (H, U, or I) to continue.`
     ;
     instr_cr_new_text = `Congratulations!
     
-Now, you need to learn a new map bewtween those four symbols and two keys.
+Now, you need to learn a new association bewtween those symbols and keys.
     
 Again, ACCURACY is the priority, so go as slowly as you need to. The more mistaks you make, the longer this block will take.
     
@@ -3099,7 +3099,7 @@ Press (H, U, or I) to start.`
     ;
     instr_tr_new_text = `Good job so far.
     
-In the following ${tr_new_block} blocks, use the NEW MAP you learned.
+In the following ${tr_new_block} blocks, use the NEW association you just learned.
 
 Press the corresponding key when the larger white ring intersects the smaller gray ring. Remember, the symbol may show up very late. In this case, MAKE A GUESS. This task is designed to be difficult, so it is okay to make a guess.
     
