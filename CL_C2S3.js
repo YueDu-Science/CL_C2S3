@@ -221,7 +221,6 @@ var stim;
 var ctx_color;
 var image;
 var key_num;
-var ctx_color_remap;
 var ctx_remap;
 var grp;
 var rng;
@@ -437,7 +436,6 @@ function experimentInit() {
   ctx_color = [];
   image = [];
   key_num = [];
-  ctx_color_remap = [];
   ctx_remap = [];
 
   var myrng = new Math.seedrandom(participant);   //use new here so it does not affect Math.random()
@@ -5442,7 +5440,7 @@ function Instr_CR_NewRoutineBegin(trials) {
     finger = finger_remap;
     if ((grp === 2)) {
         ctx = ctx_remap;
-        ctx_color = ctx_color_remap;
+        ctx_color = ctx_color_map;
     } else {
         ctx = ctx_map;
         ctx_color = ctx_color_map;
@@ -5704,7 +5702,7 @@ function Instr_RT_NewRoutineBegin(trials) {
     finger = finger_remap;
     if ((grp === 2)) {
         ctx = ctx_remap;
-        ctx_color = ctx_color_remap;
+        ctx_color = ctx_color_map;
     } else {
         ctx = ctx_map;
         ctx_color = ctx_color_map;
@@ -6233,7 +6231,7 @@ function Instr_TR_NewRoutineBegin(trials) {
     finger = finger_remap;
     if ((grp === 2)) {
         ctx = ctx_remap;
-        ctx_color = ctx_color_remap;
+        ctx_color = ctx_color_map;
     } else {
         ctx = ctx_map;
         ctx_color = ctx_color_map;
