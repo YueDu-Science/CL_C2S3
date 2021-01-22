@@ -416,8 +416,8 @@ function experimentInit() {
               tr_old_block = 6;
           } else {
             if (session === 12) {
-                rt_old = 1;
-                rt_old_block = 2;
+                // rt_old = 1;
+                // rt_old_block = 2;
                 cr_new = 1;
                 tr_new = 1;
                 tr_new_block = 8;
